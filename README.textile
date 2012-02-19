@@ -14,6 +14,14 @@ Go to "System -> Configuration -> Admin -> Yubikey".
 
 Enable yubikey. You can alternativly define your own yubikey server or disable HTTPS communication (not recommended).
 
+You must enter the client id and the secret for you magento shop.
+If you need a client id you can register it at https://upgrade.yubico.com/getapikey/
+
+You need an yubicode to get the client id and secret.
+
+If you had problems with yubikey authentification there is a option to enabled logging. The service now loggs the
+return status from yubikey service and the one time password to var/log/yubikey.log
+
 h3. Add yubikey to admin user
 
 After enabling the yubikey service you must add a yubikey ID for each user. Open "System -> Permissions -> Users" and

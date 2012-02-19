@@ -1,5 +1,5 @@
 app/etc/modules/*                                                   app/etc/modules/
-app/code/local/N98/Yubikey                                          app/code/local/N98/Yubikey
+app/code/community/N98/Yubikey                                          app/code/community/N98/Yubikey
 app/design/adminhtml/default/default/layout/n98_yubikey.xml         app/design/adminhtml/default/default/layout/n98_yubikey.xml
 app/design/adminhtml/default/default/template/n98_yubikey           app/design/adminhtml/default/default/template/n98_yubikey
 app/locale/en_US/N98_Yubikey.csv   app/locale/en_US/N98_Yubikey.csv
