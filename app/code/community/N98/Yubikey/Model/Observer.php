@@ -43,7 +43,7 @@ class N98_Yubikey_Model_Observer
     /**
      * @param Varien_Event_Observer $observer
      */
-    public function controllerActionPredispatch($observer)
+    public function controllerActionPredispatch(Varien_Event_Observer $observer)
     {
         $session = Mage::getSingleton('admin/session');
         /* @var $session Mage_Admin_Model_Session */
@@ -98,5 +98,24 @@ class N98_Yubikey_Model_Observer
     {
         $message = date('c') . "\n OTP: " . $otp . ' | Status: ' . $status;
         Mage::log($message, Zend_Log::DEBUG, 'yubikey.log');
+    }
+
+    /**
+     * @param Varien_Event_Observer $observer
+     */
+    public function addYubikeyTabToUserPermissionForm(Varien_Event_Observer $observer)
+    {
+        $block = $observer->getBlock();
+        /* @var $block Mage_Adminhtml_Block_Permissions_User_Edit_Tabs */
+
+        if ($block instanceof Mage_Adminhtml_Block_Permissions_User_Edit_Tabs) {
+            $block->addTabAfter('yubikey_section', array(
+                'label'     => Mage::helper('n98_yubikey')->__('Yubikey setup'),
+                'title'     => Mage::helper('n98_yubikey')->__('Yubikey setup'),
+                'content'   => $block->getLayout()->createBlock('n98_yubikey/adminhtml_permission_user_edit_tab_yubikey')->toHtml(),
+                'active'    => true
+            ), 'roles_section');
+
+        }
     }
 }

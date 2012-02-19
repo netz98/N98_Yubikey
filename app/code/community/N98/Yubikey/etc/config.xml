@@ -2,7 +2,7 @@
 <config>
     <modules>
         <N98_Yubikey>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </N98_Yubikey>
     </modules>
     <admin>
@@ -35,6 +35,14 @@
                     </n98_yubikey>
                 </observers>
             </controller_action_predispatch>
+            <core_block_abstract_prepare_layout_after>
+                <observers>
+                    <n98_yubikey>
+                        <class>n98_yubikey/observer</class>
+                        <method>addYubikeyTabToUserPermissionForm</method>
+                    </n98_yubikey>
+                </observers>
+            </core_block_abstract_prepare_layout_after>
         </events>
     </adminhtml>
     <global>
@@ -42,11 +50,6 @@
             <n98_yubikey>
                 <class>N98_Yubikey_Block</class>
             </n98_yubikey>
-            <adminhtml>
-                <rewrite>
-                    <permissions_user_edit_tabs>N98_Yubikey_Block_Adminhtml_Permission_User_Edit_Tabs</permissions_user_edit_tabs>
-                </rewrite>
-            </adminhtml>
         </blocks>
         <models>
             <n98_yubikey>
