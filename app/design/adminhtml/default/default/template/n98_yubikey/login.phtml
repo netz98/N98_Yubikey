@@ -20,10 +20,8 @@
     <style type="text/css">
          /* Yubico Mice header*/
         .yubi-key-input {
-            background: white url("<?php echo $this->getSkinUrl('images/n98_yubikey/yubiright_16x16.gif') ?>") no-repeat 2px 2px;
-            padding-left: 20px;
-            height: 18px;
-            width: 180px;
+            background: white url("<?php echo $this->getSkinUrl('images/n98_yubikey/yubiright_16x16.gif') ?>") no-repeat 2px 2px !important;
+            padding-left: 20px !important;
         }
     </style>
 
@@ -39,10 +37,18 @@
                     <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
                 </div>
                 <div class="input-box"><label for="login"><?php echo Mage::helper('n98_yubikey')->__('YubiKey / One time password:') ?></label><br />
-                    <input type="password" id="login" name="otp" class="yubi-key-input required-entry input-text" value="" /></div>
+                    <input type="password" id="login" name="otp" class="yubi-key-input required-entry input-text" value="" />
+                </div>
+                <div class="input-box input-right">
+                    <ul>
+                        <li><?php echo Mage::helper('n98_yubikey')->__('1. Place your YubiKey in the USB-port.') ?></li>
+                        <li><?php echo Mage::helper('n98_yubikey')->__('2. Touch YubiKey button.') ?></li>
+                    </ul>
+                </div>
                 <div class="clear"></div>
             </div>
         </form>
+
         <div class="bottom"></div>
         <script type="text/javascript">
             var loginForm = new varienForm('loginForm');

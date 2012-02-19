@@ -2,7 +2,7 @@
 <config>
     <modules>
         <N98_Yubikey>
-            <version>0.1.0</version>
+            <version>1.0.0</version>
         </N98_Yubikey>
     </modules>
     <admin>
@@ -17,6 +17,15 @@
         </routers>
     </admin>
     <adminhtml>
+        <translate>
+            <modules>
+                <N98_Yubikey>
+                    <files>
+                        <default>N98_Yubikey.csv</default>
+                    </files>
+                </N98_Yubikey>
+            </modules>
+        </translate>
         <events>
             <controller_action_predispatch>
                 <observers>
@@ -29,6 +38,16 @@
         </events>
     </adminhtml>
     <global>
+        <blocks>
+            <n98_yubikey>
+                <class>N98_Yubikey_Block</class>
+            </n98_yubikey>
+            <adminhtml>
+                <rewrite>
+                    <permissions_user_edit_tabs>N98_Yubikey_Block_Adminhtml_Permission_User_Edit_Tabs</permissions_user_edit_tabs>
+                </rewrite>
+            </adminhtml>
+        </blocks>
         <models>
             <n98_yubikey>
                 <class>N98_Yubikey_Model</class>
@@ -39,6 +58,13 @@
                 <class>N98_Yubikey_Helper</class>
             </n98_yubikey>
         </helpers>
+        <resources>
+            <n98_yubikey_setup>
+                <setup>
+                    <module>N98_Yubikey</module>
+                </setup>
+            </n98_yubikey_setup>
+        </resources>
     </global>
     <default>
         <admin>

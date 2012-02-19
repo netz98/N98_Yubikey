@@ -1,4 +1,6 @@
 <layout version="0.1.0">
+
+    <!-- Yubikey prompt as second step after login -->
     <adminhtml_yubikey_login>
         <block name="n98.yubikey.login" template="n98_yubikey/login.phtml" />
     </adminhtml_yubikey_login>

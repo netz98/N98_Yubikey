@@ -2,6 +2,6 @@ app/etc/modules/*                                                   app/etc/modu
 app/code/local/N98/Yubikey                                          app/code/local/N98/Yubikey
 app/design/adminhtml/default/default/layout/n98_yubikey.xml         app/design/adminhtml/default/default/layout/n98_yubikey.xml
 app/design/adminhtml/default/default/template/n98_yubikey           app/design/adminhtml/default/default/template/n98_yubikey
-app/design/adminhtml/default/default/locale/en_US/N98_Yubikey.csv   app/design/adminhtml/default/default/locale/en_US/N98_Yubikey.csv
-app/design/adminhtml/default/default/locale/de_DE/N98_Yubikey.csv   app/design/adminhtml/default/default/locale/de_DE/N98_Yubikey.csv
+app/locale/en_US/N98_Yubikey.csv   app/locale/en_US/N98_Yubikey.csv
+app/locale/de_DE/N98_Yubikey.csv   app/locale/de_DE/N98_Yubikey.csv
 skin/adminhtml/default/default/images/n98_yubikey                   skin/adminhtml/default/default/images/n98_yubikey
