@@ -109,13 +109,18 @@ class N98_Yubikey_Model_Observer
         /* @var $block Mage_Adminhtml_Block_Permissions_User_Edit_Tabs */
 
         if ($block instanceof Mage_Adminhtml_Block_Permissions_User_Edit_Tabs) {
-            $block->addTabAfter('yubikey_section', array(
+            $tabData = array(
                 'label'     => Mage::helper('n98_yubikey')->__('Yubikey setup'),
                 'title'     => Mage::helper('n98_yubikey')->__('Yubikey setup'),
                 'content'   => $block->getLayout()->createBlock('n98_yubikey/adminhtml_permission_user_edit_tab_yubikey')->toHtml(),
                 'active'    => true
-            ), 'roles_section');
-
+            );
+            if (method_exists($block, 'addTabAfter')) {
+                // >= CE 1.6
+                $block->addTabAfter('yubikey_section', $tabData, 'roles_section');
+            } else {
+                $block->addTab('yubikey_section', $tabData);
+            }
         }
     }
 }
