@@ -1,0 +1,16 @@
+{
+    "name": "n98/N98_Yubikey",
+    "license": "OSL-3.0",
+    "type": "magento-module",
+    "description": "Adds yubikey based two factor authentification to admin login",
+    "homepage": "https://github.com/netz98/N98_Yubikey",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "dev-master"
+    },
+    "authors":[
+        {
+            "name":"netz98 new media GmbH",
+            "email":"magento@netz98.de"
+        }
+    ]
+}
