@@ -28,4 +28,4 @@ After enabling the yubikey service you must add a yubikey ID for each user. Open
 select the user.
 The user edit form has a new tab to configure the yubikey. Add a yubikey to the user. Please note that you can
 block yourself if you assign a wrong yubikey id to the current logged in user!
-If you did this you can reset the yubkey id on the database. There is new field "yubikey" in the the table "admin_user".
+If you did this you can reset the yubkey id on the database. There is new field "yubikey" in the table "admin_user".
